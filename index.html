@@ -39,6 +39,26 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const blocks = document.querySelectorAll('.landing-block');
+            const rotateButton = document.querySelector('.rotate-screen-button');
+
+            // Проверка на мобильное устройство
+            function isMobileDevice() {
+                return (window.innerWidth <= 768) || 
+                       (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
+            }
+
+            // Показываем/скрываем кнопку в зависимости от устройства
+            function updateRotateButton() {
+                if (isMobileDevice()) {
+                    rotateButton.style.display = 'block';
+                } else {
+                    rotateButton.style.display = 'none';
+                }
+            }
+
+            // Проверяем при загрузке и при изменении размера окна
+            updateRotateButton();
+            window.addEventListener('resize', updateRotateButton);
 
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
