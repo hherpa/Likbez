@@ -15,6 +15,7 @@ body {
     max-width: 1440px;
     margin: 0 auto;
     padding: 40px;
+    transition: transform 0.3s ease;
 }
 
 .main-content {
@@ -324,7 +325,7 @@ body {
     bottom: 20px;
     right: 20px;
     z-index: 9999;
-    display: block;
+    display: none;
 }
 
 #rotateScreenBtn {
@@ -344,11 +345,16 @@ body {
 #rotateScreenBtn svg {
     width: 30px;
     height: 30px;
+    transition: transform 0.3s ease;
 }
 
 #rotateScreenBtn:hover {
     transform: scale(1.1);
     background-color: #e06b57;
+}
+
+#rotateScreenBtn.rotated svg {
+    transform: rotate(90deg);
 }
 
 @media screen and (max-width: 768px) {
