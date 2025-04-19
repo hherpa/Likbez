@@ -8,6 +8,13 @@
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.site-wrapper {
+    width: 100%;
+    min-height: 100vh;
+    transition: transform 0.3s ease;
 }
 
 .container {
@@ -15,7 +22,6 @@ body {
     max-width: 1440px;
     margin: 0 auto;
     padding: 40px;
-    transition: transform 0.3s ease;
 }
 
 .main-content {
@@ -42,6 +48,8 @@ body {
     padding: 20px;
     background-color: #F47D63;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 10;
 }
 
 .logo {
