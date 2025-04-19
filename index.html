@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лендинг</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="logo/Likbez.png" alt="Логотип" />
+        </div>
+    </header>
+    <div class="container">
+        <img src="svg/Changer.svg" alt="changer" style="width: 100%; height: auto;">
+        <main class="main-content">
+            <img src="svg/Science_Map.svg" alt="Science Map" class="landing-block">
+            <img src="svg/Chronological_Discoveries.svg" alt="Chronological Discoveries" class="landing-block">
+            <img src="svg/Frame 1116606602.svg" alt="Frame 1116606602" class="landing-block">
+            <img src="svg/Unusual_Abstractions.svg" alt="Unusual Abstractions" class="landing-block">
+            <img src="svg/Learning_Tool.svg" alt="Learning Tool" class="landing-block">
+            <img src="svg/Infographic_Nodes.svg" alt="Infographic Nodes" class="landing-block">
+            <img src="svg/Frame 1116606609.svg" alt="Frame 1116606609" class="landing-block">
+            <img src="svg/Profiles.svg" alt="Profiles" class="landing-block">
+            <img src="svg/COOP.svg" alt="COOP" class="landing-block">
+            <img src="svg/Ideas_Incubator.svg" alt="Ideas Incubator" class="landing-block">
+            <img src="svg/Example_Dispute_Node.svg" alt="Example: Dispute Node" class="landing-block">
+            <img src="svg/Contact Us.svg" alt="Contact Us" class="landing-block">
+        </main>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const blocks = document.querySelectorAll('.landing-block');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.classList.add('visible');
+                        }, 100);
+                    } else {
+                        entry.target.classList.remove('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            blocks.forEach((block, index) => {
+                block.dataset.order = index;
+                observer.observe(block);
+            });
+        });
+    </script>
+</body>
+</html> 
