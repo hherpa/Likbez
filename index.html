@@ -7,40 +7,43 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header class="header">
-        <div class="logo">
-            <img src="logo/Likbez.png" alt="Логотип" />
+    <div class="site-wrapper">
+        <header class="header">
+            <div class="logo">
+                <img src="logo/Likbez.png" alt="Логотип" />
+            </div>
+        </header>
+        <div class="container">
+            <img src="svg/Changer.svg" alt="changer" style="width: 100%; height: auto;">
+            <main class="main-content">
+                <img src="svg/Science_Map.svg" alt="Science Map" class="landing-block">
+                <img src="svg/Chronological_Discoveries.svg" alt="Chronological Discoveries" class="landing-block">
+                <img src="svg/Frame 1116606602.svg" alt="Frame 1116606602" class="landing-block">
+                <img src="svg/Unusual_Abstractions.svg" alt="Unusual Abstractions" class="landing-block">
+                <img src="svg/Learning_Tool.svg" alt="Learning Tool" class="landing-block">
+                <img src="svg/Infographic_Nodes.svg" alt="Infographic Nodes" class="landing-block">
+                <img src="svg/Frame 1116606609.svg" alt="Frame 1116606609" class="landing-block">
+                <img src="svg/Profiles.svg" alt="Profiles" class="landing-block">
+                <img src="svg/COOP.svg" alt="COOP" class="landing-block">
+                <img src="svg/Ideas_Incubator.svg" alt="Ideas Incubator" class="landing-block">
+                <img src="svg/Example_Dispute_Node.svg" alt="Example: Dispute Node" class="landing-block">
+                <img src="svg/Contact Us.svg" alt="Contact Us" class="landing-block">
+            </main>
         </div>
-    </header>
-    <div class="container">
-        <img src="svg/Changer.svg" alt="changer" style="width: 100%; height: auto;">
-        <main class="main-content">
-            <img src="svg/Science_Map.svg" alt="Science Map" class="landing-block">
-            <img src="svg/Chronological_Discoveries.svg" alt="Chronological Discoveries" class="landing-block">
-            <img src="svg/Frame 1116606602.svg" alt="Frame 1116606602" class="landing-block">
-            <img src="svg/Unusual_Abstractions.svg" alt="Unusual Abstractions" class="landing-block">
-            <img src="svg/Learning_Tool.svg" alt="Learning Tool" class="landing-block">
-            <img src="svg/Infographic_Nodes.svg" alt="Infographic Nodes" class="landing-block">
-            <img src="svg/Frame 1116606609.svg" alt="Frame 1116606609" class="landing-block">
-            <img src="svg/Profiles.svg" alt="Profiles" class="landing-block">
-            <img src="svg/COOP.svg" alt="COOP" class="landing-block">
-            <img src="svg/Ideas_Incubator.svg" alt="Ideas Incubator" class="landing-block">
-            <img src="svg/Example_Dispute_Node.svg" alt="Example: Dispute Node" class="landing-block">
-            <img src="svg/Contact Us.svg" alt="Contact Us" class="landing-block">
-        </main>
-    </div>
-    <div class="rotate-screen-button">
-        <button id="rotateScreenBtn" onclick="rotateScreen()">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M10 9V5L3 12L10 19V14.9C15 14.9 18.5 16.5 21 20C20 15 17 10 10 9Z" fill="white"/>
-            </svg>
-        </button>
+        <div class="rotate-screen-button">
+            <button id="rotateScreenBtn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 9V5L3 12L10 19V14.9C15 14.9 18.5 16.5 21 20C20 15 17 10 10 9Z" fill="white"/>
+                </svg>
+            </button>
+        </div>
     </div>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const blocks = document.querySelectorAll('.landing-block');
             const rotateButton = document.querySelector('.rotate-screen-button');
-            const container = document.querySelector('.container');
+            const siteWrapper = document.querySelector('.site-wrapper');
+            const rotateBtn = document.getElementById('rotateScreenBtn');
             let isRotated = false;
 
             // Проверка на мобильное устройство
@@ -61,32 +64,34 @@
             // Функция поворота контента
             function rotateContent() {
                 if (!isRotated) {
-                    container.style.transform = 'rotate(90deg)';
-                    container.style.transformOrigin = 'center center';
-                    container.style.width = '100vh';
-                    container.style.height = '100vw';
-                    container.style.position = 'fixed';
-                    container.style.top = '50%';
-                    container.style.left = '50%';
-                    container.style.marginTop = '-50vw';
-                    container.style.marginLeft = '-50vh';
+                    siteWrapper.style.transform = 'rotate(90deg)';
+                    siteWrapper.style.transformOrigin = 'center center';
+                    siteWrapper.style.width = '100vh';
+                    siteWrapper.style.height = '100vw';
+                    siteWrapper.style.position = 'fixed';
+                    siteWrapper.style.top = '50%';
+                    siteWrapper.style.left = '50%';
+                    siteWrapper.style.marginTop = '-50vw';
+                    siteWrapper.style.marginLeft = '-50vh';
                     document.body.style.overflow = 'hidden';
+                    rotateBtn.classList.add('rotated');
                 } else {
-                    container.style.transform = '';
-                    container.style.width = '';
-                    container.style.height = '';
-                    container.style.position = '';
-                    container.style.top = '';
-                    container.style.left = '';
-                    container.style.marginTop = '';
-                    container.style.marginLeft = '';
+                    siteWrapper.style.transform = '';
+                    siteWrapper.style.width = '';
+                    siteWrapper.style.height = '';
+                    siteWrapper.style.position = '';
+                    siteWrapper.style.top = '';
+                    siteWrapper.style.left = '';
+                    siteWrapper.style.marginTop = '';
+                    siteWrapper.style.marginLeft = '';
                     document.body.style.overflow = '';
+                    rotateBtn.classList.remove('rotated');
                 }
                 isRotated = !isRotated;
             }
 
             // Назначаем обработчик на кнопку
-            rotateButton.addEventListener('click', rotateContent);
+            rotateBtn.addEventListener('click', rotateContent);
 
             // Проверяем при загрузке и при изменении размера окна
             updateRotateButton();
