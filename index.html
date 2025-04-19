@@ -79,14 +79,51 @@
         });
 
         function rotateScreen() {
+            // Проверяем поддержку разных API для поворота экрана
             if (screen.orientation && screen.orientation.lock) {
+                // Стандартный способ
                 screen.orientation.lock('landscape')
                     .catch(function(error) {
                         console.log('Ошибка при повороте экрана:', error);
+                        showRotateMessage();
                     });
+            } else if (window.screen && window.screen.lockOrientation) {
+                // Устаревший способ
+                window.screen.lockOrientation('landscape');
+            } else if (window.screen && window.screen.mozLockOrientation) {
+                // Firefox
+                window.screen.mozLockOrientation('landscape');
+            } else if (window.screen && window.screen.msLockOrientation) {
+                // IE
+                window.screen.msLockOrientation('landscape');
             } else {
-                alert('Ваше устройство не поддерживает программный поворот экрана');
+                showRotateMessage();
             }
+        }
+
+        function showRotateMessage() {
+            const message = document.createElement('div');
+            message.style.cssText = `
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: rgba(0, 0, 0, 0.8);
+                color: white;
+                padding: 20px;
+                border-radius: 10px;
+                z-index: 10000;
+                text-align: center;
+                max-width: 80%;
+            `;
+            message.innerHTML = `
+                <p>Пожалуйста, поверните устройство в горизонтальное положение</p>
+                <p style="font-size: 0.8em; margin-top: 10px;">Если устройство не поворачивается автоматически, включите автоповорот в настройках устройства</p>
+            `;
+            document.body.appendChild(message);
+            setTimeout(() => {
+                message.remove();
+            }, 5000);
         }
     </script>
 </body>
