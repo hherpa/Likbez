@@ -199,29 +199,50 @@ body {
 
 /* Адаптивность */
 @media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+    
     .header {
         flex-direction: column;
         gap: 20px;
+        padding: 15px;
     }
     
-    .hero-content {
-        grid-template-columns: 1fr;
+    .logo img {
+        height: 30px;
     }
     
-    .features {
-        grid-template-columns: 1fr;
+    .main-content {
+        gap: 20px;
+        margin: 25px 0;
     }
     
-    .about {
-        grid-template-columns: 1fr;
-    }
-    
-    .footer-content {
-        grid-template-columns: 1fr;
+    .landing-block {
+        max-width: 100%;
     }
     
     .hero h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .main-content {
+        gap: 15px;
+        margin: 15px 0;
+    }
+    
+    .landing-block {
+        transform: translateX(-10px) scale(0.95);
+    }
+    
+    .hero h1 {
+        font-size: 1.5rem;
     }
 }
 
