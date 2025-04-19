@@ -227,7 +227,7 @@ body {
     }
     
     .rotate-screen-button {
-        display: block;
+        display: block !important;
     }
 }
 
