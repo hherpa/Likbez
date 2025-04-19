@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Likbez</title>
+    <title>Лендинг</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -29,6 +29,13 @@
             <img src="svg/Contact Us.svg" alt="Contact Us" class="landing-block">
         </main>
     </div>
+    <div class="rotate-screen-button">
+        <button id="rotateScreenBtn" onclick="rotateScreen()">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 9V5L3 12L10 19V14.9C15 14.9 18.5 16.5 21 20C20 15 17 10 10 9Z" fill="white"/>
+            </svg>
+        </button>
+    </div>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const blocks = document.querySelectorAll('.landing-block');
@@ -50,6 +57,17 @@
                 observer.observe(block);
             });
         });
+
+        function rotateScreen() {
+            if (screen.orientation && screen.orientation.lock) {
+                screen.orientation.lock('landscape')
+                    .catch(function(error) {
+                        console.log('Ошибка при повороте экрана:', error);
+                    });
+            } else {
+                alert('Ваше устройство не поддерживает программный поворот экрана');
+            }
+        }
     </script>
 </body>
 </html> 
