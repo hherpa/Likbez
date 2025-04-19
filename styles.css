@@ -227,7 +227,7 @@ body {
     }
     
     .rotate-screen-button {
-        display: block !important;
+        display: block;
     }
 }
 
@@ -320,24 +320,39 @@ body {
 
 /* Стили для кнопки поворота экрана */
 .rotate-screen-button {
-    display: none;
     position: fixed;
     bottom: 20px;
     right: 20px;
-    z-index: 1000;
+    z-index: 9999;
+    display: none;
 }
 
 #rotateScreenBtn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
     background-color: #F47D63;
     border: none;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+#rotateScreenBtn svg {
+    width: 30px;
+    height: 30px;
 }
 
 #rotateScreenBtn:hover {
     transform: scale(1.1);
+    background-color: #e06b57;
+}
+
+@media screen and (max-width: 768px) {
+    .rotate-screen-button {
+        display: block;
+    }
 } 
