@@ -9,12 +9,27 @@ body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
     overflow-x: hidden;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
 }
 
 .site-wrapper {
     width: 100%;
     min-height: 100vh;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.site-wrapper.rotated {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(90deg);
+    width: 100vh;
+    height: 100vw;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .container {
@@ -50,6 +65,7 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: relative;
     z-index: 10;
+    width: 100%;
 }
 
 .logo {
@@ -334,6 +350,14 @@ body {
     right: 20px;
     z-index: 9999;
     display: none;
+}
+
+.site-wrapper.rotated .rotate-screen-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    transform: rotate(-90deg);
+    transform-origin: center;
 }
 
 #rotateScreenBtn {
