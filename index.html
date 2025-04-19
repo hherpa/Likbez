@@ -64,26 +64,11 @@
             // Функция поворота контента
             function rotateContent() {
                 if (!isRotated) {
-                    siteWrapper.style.transform = 'rotate(90deg)';
-                    siteWrapper.style.transformOrigin = 'center center';
-                    siteWrapper.style.width = '100vh';
-                    siteWrapper.style.height = '100vw';
-                    siteWrapper.style.position = 'fixed';
-                    siteWrapper.style.top = '50%';
-                    siteWrapper.style.left = '50%';
-                    siteWrapper.style.marginTop = '-50vw';
-                    siteWrapper.style.marginLeft = '-50vh';
+                    siteWrapper.classList.add('rotated');
                     document.body.style.overflow = 'hidden';
                     rotateBtn.classList.add('rotated');
                 } else {
-                    siteWrapper.style.transform = '';
-                    siteWrapper.style.width = '';
-                    siteWrapper.style.height = '';
-                    siteWrapper.style.position = '';
-                    siteWrapper.style.top = '';
-                    siteWrapper.style.left = '';
-                    siteWrapper.style.marginTop = '';
-                    siteWrapper.style.marginLeft = '';
+                    siteWrapper.classList.remove('rotated');
                     document.body.style.overflow = '';
                     rotateBtn.classList.remove('rotated');
                 }
