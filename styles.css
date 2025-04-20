@@ -412,6 +412,19 @@ body {
     display: none;
 }
 
+@media screen and (max-width: 768px) {
+    .rotate-screen-button {
+        display: block;
+    }
+
+    body.landscape .rotate-screen-button {
+        transform: rotate(-90deg);
+        transform-origin: center;
+        right: 20px;
+        bottom: 20px;
+    }
+}
+
 #rotateScreenBtn {
     width: 60px;
     height: 60px;
@@ -423,26 +436,13 @@ body {
     justify-content: center;
     cursor: pointer;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
 }
 
 #rotateScreenBtn svg {
     width: 30px;
     height: 30px;
-    transition: transform 0.3s ease;
-}
-
-#rotateScreenBtn:hover {
-    transform: scale(1.1);
-    background-color: #e06b57;
 }
 
 #rotateScreenBtn.rotated svg {
     transform: rotate(90deg);
-}
-
-@media screen and (max-width: 768px) {
-    .rotate-screen-button {
-        display: block;
-    }
 } 
