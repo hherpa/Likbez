@@ -11,7 +11,7 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     position: relative;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     -webkit-overflow-scrolling: touch;
 }
@@ -49,9 +49,7 @@ body.landscape .landscape-mode {
 
 body.landscape .landscape-content {
     transform: rotate(90deg);
-    -webkit-transform: rotate(90deg);
     transform-origin: center center;
-    -webkit-transform-origin: center center;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -325,34 +323,26 @@ body.landscape .landscape-content {
 }
 
 /* Анимации для карточек */
-.landscape-block {
+.landing-block {
     opacity: 0;
-    transform: translateY(50px);
-    -webkit-transform: translateY(50px);
-    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
-    -webkit-transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+    transform: translateY(30px);
+    transition: all 0.5s ease-out;
     will-change: transform, opacity;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
-    max-width: 100%;
-    margin: 20px auto;
-    display: block;
 }
 
-.landscape-block.visible {
+.landing-block.visible {
     opacity: 1;
     transform: translateY(0);
-    -webkit-transform: translateY(0);
 }
 
 /* Оптимизация производительности */
-.landscape-block {
+.landing-block {
     perspective: 1000px;
     -webkit-perspective: 1000px;
     transform-style: preserve-3d;
     -webkit-transform-style: preserve-3d;
-    max-width: 100%;
-    margin: 20px auto;
 }
 
 .character-selector {
@@ -413,7 +403,7 @@ body.landscape .landscape-content {
 .rotate-screen-button {
     position: fixed;
     bottom: 20px;
-    right: 20px;
+    left: 20px;
     z-index: 9999;
     display: none;
 }
@@ -442,18 +432,6 @@ body.landscape .landscape-content {
 
 #rotateScreenBtn.rotated {
     transform: rotate(-90deg);
-    -webkit-transform: rotate(-90deg);
-}
-
-/* Позиционирование в ландшафтном режиме */
-body.landscape .rotate-screen-button {
-    transform: rotate(-90deg);
-    -webkit-transform: rotate(-90deg);
-    transform-origin: center;
-    -webkit-transform-origin: center;
-    right: auto;
-    left: 20px;
-    bottom: 20px;
 }
 
 /* Медиа-запросы */
