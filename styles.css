@@ -434,6 +434,15 @@ body.landscape .landscape-content {
     transform: rotate(-90deg);
 }
 
+/* Позиционирование в ландшафтном режиме */
+body.landscape .rotate-screen-button {
+    transform: rotate(-90deg);
+    transform-origin: center;
+    right: auto;
+    left: 20px;
+    bottom: 20px;
+}
+
 /* Медиа-запросы */
 @media screen and (max-width: 768px) {
     .rotate-screen-button {
