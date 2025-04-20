@@ -71,7 +71,6 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const blocks = document.querySelectorAll('.landing-block');
             const rotateButton = document.querySelector('.rotate-screen-button');
             const rotateBtn = document.getElementById('rotateScreenBtn');
             let isLandscape = false;
@@ -97,14 +96,13 @@
 
             // Функция переключения режима
             function toggleOrientation() {
-                if (!isMobileDevice()) return; // Запрещаем переключение на десктопе
+                if (!isMobileDevice()) return;
                 
                 if (!isLandscape) {
                     document.body.classList.add('landscape');
                     rotateBtn.classList.add('rotated');
                     document.querySelector('.portrait-mode').style.display = 'none';
                     document.querySelector('.landscape-mode').style.display = 'block';
-                    // Прокручиваем в начало при переключении
                     document.querySelector('.landscape-content').scrollTop = 0;
                 } else {
                     document.body.classList.remove('landscape');
@@ -121,23 +119,6 @@
             // Проверяем при загрузке и при изменении размера окна
             updateMobileFeatures();
             window.addEventListener('resize', updateMobileFeatures);
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        setTimeout(() => {
-                            entry.target.classList.add('visible');
-                        }, 100);
-                    } else {
-                        entry.target.classList.remove('visible');
-                    }
-                });
-            }, { threshold: 0.1 });
-
-            blocks.forEach((block, index) => {
-                block.dataset.order = index;
-                observer.observe(block);
-            });
         });
     </script>
 </body>
