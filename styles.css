@@ -14,7 +14,6 @@ body {
     width: 100vw;
     height: 100vh;
     -webkit-overflow-scrolling: touch;
-    background-color: #fff;
 }
 
 /* Портретный режим */
@@ -24,7 +23,6 @@ body {
     height: 100%;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-    background-color: #fff;
 }
 
 .landscape-mode {
@@ -35,7 +33,6 @@ body {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    background-color: #fff;
 }
 
 /* Ландшафтный режим */
@@ -44,7 +41,6 @@ body.landscape {
     position: fixed;
     width: 100%;
     height: 100%;
-    background-color: #fff;
 }
 
 body.landscape .landscape-mode {
@@ -63,22 +59,7 @@ body.landscape .landscape-content {
     margin-left: -50vh;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-    padding: 0;
-    background-color: #fff;
-}
-
-body.landscape .landscape-content .header {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background-color: #fff;
-}
-
-body.landscape .landscape-content .container {
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    height: 100%;
+    padding: 20px;
 }
 
 .site-wrapper {
