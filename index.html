@@ -17,18 +17,18 @@
         <div class="container">
             <img src="svg/Changer.svg" alt="changer" style="width: 100%; height: auto;">
             <main class="main-content">
-                <img src="svg/Science_Map.svg" alt="Science Map" class="landscape-block">
-                <img src="svg/Chronological_Discoveries.svg" alt="Chronological Discoveries" class="landscape-block">
-                <img src="svg/Frame 1116606602.svg" alt="Frame 1116606602" class="landscape-block">
-                <img src="svg/Unusual_Abstractions.svg" alt="Unusual Abstractions" class="landscape-block">
-                <img src="svg/Learning_Tool.svg" alt="Learning Tool" class="landscape-block">
-                <img src="svg/Infographic_Nodes.svg" alt="Infographic Nodes" class="landscape-block">
-                <img src="svg/Frame 1116606609.svg" alt="Frame 1116606609" class="landscape-block">
-                <img src="svg/Profiles.svg" alt="Profiles" class="landscape-block">
-                <img src="svg/COOP.svg" alt="COOP" class="landscape-block">
-                <img src="svg/Ideas_Incubator.svg" alt="Ideas Incubator" class="landscape-block">
-                <img src="svg/Example_Dispute_Node.svg" alt="Example: Dispute Node" class="landscape-block">
-                <img src="svg/Contact Us.svg" alt="Contact Us" class="landscape-block">
+                <img src="svg/Science_Map.svg" alt="Science Map" class="landing-block">
+                <img src="svg/Chronological_Discoveries.svg" alt="Chronological Discoveries" class="landing-block">
+                <img src="svg/Frame 1116606602.svg" alt="Frame 1116606602" class="landing-block">
+                <img src="svg/Unusual_Abstractions.svg" alt="Unusual Abstractions" class="landing-block">
+                <img src="svg/Learning_Tool.svg" alt="Learning Tool" class="landing-block">
+                <img src="svg/Infographic_Nodes.svg" alt="Infographic Nodes" class="landing-block">
+                <img src="svg/Frame 1116606609.svg" alt="Frame 1116606609" class="landing-block">
+                <img src="svg/Profiles.svg" alt="Profiles" class="landing-block">
+                <img src="svg/COOP.svg" alt="COOP" class="landing-block">
+                <img src="svg/Ideas_Incubator.svg" alt="Ideas Incubator" class="landing-block">
+                <img src="svg/Example_Dispute_Node.svg" alt="Example: Dispute Node" class="landing-block">
+                <img src="svg/Contact Us.svg" alt="Contact Us" class="landing-block">
             </main>
         </div>
     </div>
@@ -44,18 +44,18 @@
             <div class="container">
                 <img src="svg/Changer.svg" alt="changer" style="width: 100%; height: auto;">
                 <main class="main-content">
-                    <img src="svg/Science_Map.svg" alt="Science Map" class="landscape-block">
-                    <img src="svg/Chronological_Discoveries.svg" alt="Chronological Discoveries" class="landscape-block">
-                    <img src="svg/Frame 1116606602.svg" alt="Frame 1116606602" class="landscape-block">
-                    <img src="svg/Unusual_Abstractions.svg" alt="Unusual Abstractions" class="landscape-block">
-                    <img src="svg/Learning_Tool.svg" alt="Learning Tool" class="landscape-block">
-                    <img src="svg/Infographic_Nodes.svg" alt="Infographic Nodes" class="landscape-block">
-                    <img src="svg/Frame 1116606609.svg" alt="Frame 1116606609" class="landscape-block">
-                    <img src="svg/Profiles.svg" alt="Profiles" class="landscape-block">
-                    <img src="svg/COOP.svg" alt="COOP" class="landscape-block">
-                    <img src="svg/Ideas_Incubator.svg" alt="Ideas Incubator" class="landscape-block">
-                    <img src="svg/Example_Dispute_Node.svg" alt="Example: Dispute Node" class="landscape-block">
-                    <img src="svg/Contact Us.svg" alt="Contact Us" class="landscape-block">
+                    <img src="svg/Science_Map.svg" alt="Science Map" class="landing-block">
+                    <img src="svg/Chronological_Discoveries.svg" alt="Chronological Discoveries" class="landing-block">
+                    <img src="svg/Frame 1116606602.svg" alt="Frame 1116606602" class="landing-block">
+                    <img src="svg/Unusual_Abstractions.svg" alt="Unusual Abstractions" class="landing-block">
+                    <img src="svg/Learning_Tool.svg" alt="Learning Tool" class="landing-block">
+                    <img src="svg/Infographic_Nodes.svg" alt="Infographic Nodes" class="landing-block">
+                    <img src="svg/Frame 1116606609.svg" alt="Frame 1116606609" class="landing-block">
+                    <img src="svg/Profiles.svg" alt="Profiles" class="landing-block">
+                    <img src="svg/COOP.svg" alt="COOP" class="landing-block">
+                    <img src="svg/Ideas_Incubator.svg" alt="Ideas Incubator" class="landing-block">
+                    <img src="svg/Example_Dispute_Node.svg" alt="Example: Dispute Node" class="landing-block">
+                    <img src="svg/Contact Us.svg" alt="Contact Us" class="landing-block">
                 </main>
             </div>
         </div>
@@ -64,8 +64,7 @@
     <div class="rotate-screen-button">
         <button id="rotateScreenBtn">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 4L12 20M12 4L8 8M12 4L16 8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M12 20L8 16M12 20L16 16" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 4L12 20M12 4L8 8M12 4L16 8M12 20L8 16M12 20L16 16" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 <path d="M4 12H20" stroke="white" stroke-width="2" stroke-linecap="round"/>
             </svg>
         </button>
@@ -75,7 +74,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             const rotateButton = document.querySelector('.rotate-screen-button');
             const rotateBtn = document.getElementById('rotateScreenBtn');
-            const blocks = document.querySelectorAll('.landscape-block');
+            const blocks = document.querySelectorAll('.landing-block');
             let isLandscape = false;
 
             // Улучшенная проверка на мобильное устройство
@@ -106,16 +105,13 @@
                 
                 const portraitMode = document.querySelector('.portrait-mode');
                 const landscapeMode = document.querySelector('.landscape-mode');
-                const landscapeContent = landscapeMode.querySelector('.landscape-content');
                 
                 if (!isLandscape) {
                     document.body.classList.add('landscape');
                     rotateBtn.classList.add('rotated');
                     portraitMode.style.display = 'none';
                     landscapeMode.style.display = 'block';
-                    if (landscapeContent) {
-                        landscapeContent.scrollTop = 0;
-                    }
+                    landscapeMode.querySelector('.landscape-content').scrollTop = 0;
                 } else {
                     document.body.classList.remove('landscape');
                     rotateBtn.classList.remove('rotated');
@@ -136,8 +132,7 @@
                         }
                     });
                 }, {
-                    threshold: 0.1,
-                    rootMargin: '50px'
+                    threshold: 0.1
                 });
 
                 blocks.forEach(block => {
