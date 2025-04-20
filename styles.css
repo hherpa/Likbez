@@ -60,6 +60,8 @@ body.landscape .landscape-content {
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     padding: 20px;
+    -webkit-transform: rotate(90deg);
+    -webkit-transform-origin: center center;
 }
 
 .site-wrapper {
@@ -323,26 +325,31 @@ body.landscape .landscape-content {
 }
 
 /* Анимации для карточек */
-.landing-block {
+.landscape-block {
     opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.5s ease-out;
+    transform: translateY(100px);
+    -webkit-transform: translateY(100px);
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+    -webkit-transition: opacity 0.4s ease-out, transform 0.4s ease-out;
     will-change: transform, opacity;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
 }
 
-.landing-block.visible {
+.landscape-block.visible {
     opacity: 1;
     transform: translateY(0);
+    -webkit-transform: translateY(0);
 }
 
 /* Оптимизация производительности */
-.landing-block {
+.landscape-block {
     perspective: 1000px;
     -webkit-perspective: 1000px;
     transform-style: preserve-3d;
     -webkit-transform-style: preserve-3d;
+    max-width: 100%;
+    margin: 20px auto;
 }
 
 .character-selector {
@@ -432,12 +439,15 @@ body.landscape .landscape-content {
 
 #rotateScreenBtn.rotated {
     transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
 }
 
 /* Позиционирование в ландшафтном режиме */
 body.landscape .rotate-screen-button {
     transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
     transform-origin: center;
+    -webkit-transform-origin: center;
     right: auto;
     left: 20px;
     bottom: 20px;
